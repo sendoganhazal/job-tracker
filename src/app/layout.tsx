@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import "@/app/globals.css";
+import {Lexend} from "next/font/google";
 
+const lexend = Lexend({ subsets: ["latin"] });
+import PrimeSSRProvider from './prime-ssr-provider'
 
 
 export const metadata: Metadata = {
@@ -10,10 +13,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="tr">
-      <main>
-        <body>{children}</body>
-      </main>
+    <html lang="tr" className={lexend.className}>
+      <PrimeSSRProvider>
+        <main>
+          <body>{children}</body>
+        </main>
+      </PrimeSSRProvider>
     </html>
   );
 }
