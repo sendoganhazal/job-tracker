@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import "@/app/globals.css";
 import {Lexend} from "next/font/google";
-
-const lexend = Lexend({ subsets: ["latin"] });
+import "@/app/globals.css";
+import "primeflex/primeflex.css";
 import PrimeSSRProvider from './prime-ssr-provider'
 
+
+const lexend = Lexend({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
